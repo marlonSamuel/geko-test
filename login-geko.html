@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Login para prueba</title>
+
+    <style>
+        .form {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15%;
+        }
+        
+        .form input {
+            width: 90%;
+            height: 30px;
+            margin: 0.5rem;
+        }
+        
+        .form button {
+            padding: 0.5em 1em;
+            border: none;
+            background: rgb(100, 200, 255);
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <form class="form" onsubmit="event.preventDefault(); login()" method="post">
+            Usuario:
+            <input id="user" type="text" /> Contraseña:
+            <input id="password" type="password" />
+            <button type="submit">Iniciar sesión</button>
+        </form>
+    </div>
+</body>
+
+</html>
+
+<SCRIPT language=JavaScript>
+    //función para validar la información antes de enviarla al servidor
+    function login() {
+        let pass = document.getElementById("password").value; //obtener contraseña
+        let user = document.getElementById("user").value; //obtener usuario
+
+        //validamos que el usuario ingresado no esté vacío nulo o indefinido.
+        if (user === "" || user === null || user === undefined) {
+            alert("el usuario no puede estár vacía");
+            return;
+        }
+
+        //validamos la contraseña ingresada por el usuario para que no estén vacía, nula o indefinida.
+        if (pass === "" || pass === null || pass === undefined) {
+            alert("la contraseña no puede estár vacía");
+            return;
+        }
+
+        console.log("información validada");
+        //si todo está correcto se envía la información al servidor
+        /*
+            TODO: realizar petición de login al servidor
+
+        */
+
+    }
+</SCRIPT>
